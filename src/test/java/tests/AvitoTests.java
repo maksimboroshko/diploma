@@ -23,7 +23,7 @@ public class AvitoTests extends TestBase {
 
     @Step("Открываем страницу и проверяем баннер")
     public void openPageAndCheckBanner() {
-        mainPage.openPage()
+        mainPage
                 .checkBannerText();
         Allure.step("Проверка баннера прошла успешно");
     }
@@ -55,13 +55,30 @@ public class AvitoTests extends TestBase {
                 .reloadAndEnterTextAndClick()
                 .checkSearchResults();
     }
-//    @Step("")
-//    @Test
-//    public void openPage() {
-//        mainPage
-//                .openPage()
-//                .checkBannerTextCookies();
-//    }
-
+    @Step("поиск страны тбилиси")
+    @Test
+    public void testCheckCountryBanner() {
+        mainPage
+                .bannerCountry()
+                .changeButton()
+                .regionSearchInput()
+                .tbilisiButton()
+                .okayButton()
+                .showMoreButtonForTbilisi();
+    }
+    @Step("проверка наличие логотипа на главной странице сайта")
+    @Test
+    public void CheckLogo() {
+        mainPage
+                .avitoLogo();
+    }
+    @Step("проверка раздела помощь")
+    @Test
+    public void CheckHelpPage() {
+        mainPage
+                .helpButton() // gg
+                .switchToNewTab()
+                .helpWord();
+    }
 }
 

@@ -12,6 +12,9 @@ import pages.MainPage;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
+
 public class TestBase {
     MainPage mainPage = new MainPage();
 
@@ -39,7 +42,15 @@ public class TestBase {
     public void preparation() {
         mainPage.openPage();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        clearBrowserCookies();
+        clearBrowserLocalStorage();
     }
+
+
+
+
+
+
 
     @AfterEach
     void addAttachments() {

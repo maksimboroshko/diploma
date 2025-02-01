@@ -3,19 +3,15 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.Keys;
 import java.time.Duration;
-import java.util.stream.Collectors;
-
-import static com.codeborne.selenide.Condition.empty;
-import static com.codeborne.selenide.Condition.visible;
-
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class MainPage {
 
-    // Локаторы
     private static final SelenideElement bannerBlock = $(".top-banner-module-content-Q1f85");
     private static final SelenideElement bannerText = bannerBlock.$("span");
     private static final SelenideElement moreDetailsLink = bannerBlock.$("a[data-marker='title']");
@@ -24,6 +20,19 @@ public class MainPage {
     private static final SelenideElement pageTitleText = $(".page-title-text-CBgaH.page-title-inline-LU8GK");
     private static final SelenideElement pageTitleCount = $(".page-title-count-yKVwK");
     private static final SelenideElement cookieBanner = $("[class*='styles-module-root-_yNxQ'][role='status']");
+    private static final SelenideElement bannerCountry = $("div[data-marker='location/tooltip']");
+    private static final SelenideElement changeButton = $("[data-marker='location/tooltip-change']");
+    private static final SelenideElement regionSearchInput = $("[data-marker='popup-location/region/search-input']");
+    private static final SelenideElement tbilisiButton = $("button[data-marker='popup-location/region/custom-option([object Object])'] .suggest-suggest_content-Gr5Vf");
+    private static final SelenideElement showMoreButtonForTbilisi = $("button[data-marker='popup-location/save-button']");
+    private static final SelenideElement okayButton = $("button.styles-module-root-EEwdX");
+    private static final SelenideElement avitoLogo = $("div.index-navigation-jgxMZ .Logo-module-logo-zwZpY");
+    private static final SelenideElement helpButton = $("a.index-module-nav-link-YtJag[href='//support.avito.ru']");
+    SelenideElement helpWord = $x("//a[@data-marker='logo-desktop-design/link' and @aria-label='Помощь']");
+
+
+
+
 
 
     // Открытие страницы
@@ -31,6 +40,75 @@ public class MainPage {
         open("/");
         return this;
     }
+    public MainPage helpWord() {
+        helpWord.shouldBe(visible)
+                .shouldHave(text("Помощь"));
+        return this;
+    }
+    public MainPage switchToNewTab() {
+        String mainWindow = WebDriverRunner.getWebDriver().getWindowHandle();
+        for (String windowHandle : WebDriverRunner.getWebDriver().getWindowHandles()) {
+            if (!windowHandle.equals(mainWindow)) {
+                WebDriverRunner.getWebDriver().switchTo().window(windowHandle);
+                break;
+            }
+        }
+        return this;
+    }
+
+    public MainPage helpButton() {
+        helpButton.shouldBe(visible)
+                .shouldHave(text("Помощь"))
+                .click();
+        return this;
+    }
+    public MainPage avitoLogo() {
+        avitoLogo.shouldBe(visible);
+        return this;
+    }
+    public MainPage okayButton() {
+        okayButton.click();
+        return this;
+    }
+    public MainPage showMoreButtonForTbilisi() {
+        showMoreButtonForTbilisi.shouldHave(text("оказать больше 1 тыс. объявлений"))
+                .shouldBe(visible)
+                .scrollTo().click();
+
+        return this;
+    }
+    public MainPage tbilisiButton() {
+        tbilisiButton.shouldBe(visible)
+                .shouldHave(text("Тбилиси"))
+                .click();
+        return this;
+    }
+
+
+
+    public MainPage bannerCountry() {
+        bannerCountry.should(Condition.appear, Duration.ofSeconds(2)) // Задержка 2 секунды перед проверкой
+                .shouldHave(text("Мы не смогли определить ваш город"));
+        return this;
+    }
+
+
+
+    public MainPage regionSearchInput() {
+        regionSearchInput.shouldBe(visible);
+        regionSearchInput.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);  // Очистка через выделение
+        regionSearchInput.setValue("Тбилиси");
+        return this;
+    }
+
+
+    public MainPage changeButton () {
+        changeButton.shouldBe(visible)
+                .shouldHave(text("Изменить")).click();
+        return this;
+    }
+
+
 
     public void checkBannerTextCookies() {
         // Используем селектор для нахождения баннера, который содержит нужный текст
