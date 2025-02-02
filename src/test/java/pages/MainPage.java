@@ -20,29 +20,38 @@ public class MainPage {
     private static final SelenideElement pageTitleText = $(".page-title-text-CBgaH.page-title-inline-LU8GK");
     private static final SelenideElement pageTitleCount = $(".page-title-count-yKVwK");
     private static final SelenideElement cookieBanner = $("[class*='styles-module-root-_yNxQ'][role='status']");
-    private static final SelenideElement bannerCountry = $("div[data-marker='location/tooltip']");
+    private static final SelenideElement bannerCountry = $$("span.styles-module-size_s-nEvE8")
+            .findBy(Condition.text("Мы не смогли определить ваш город"));
+
+
     private static final SelenideElement changeButton = $("[data-marker='location/tooltip-change']");
     private static final SelenideElement regionSearchInput = $("[data-marker='popup-location/region/search-input']");
     private static final SelenideElement tbilisiButton = $("button[data-marker='popup-location/region/custom-option([object Object])'] .suggest-suggest_content-Gr5Vf");
     private static final SelenideElement showMoreButtonForTbilisi = $("button[data-marker='popup-location/save-button']");
     private static final SelenideElement okayButton = $("button.styles-module-root-EEwdX");
-    private static final SelenideElement avitoLogo = $("div.index-navigation-jgxMZ .Logo-module-logo-zwZpY");
-    private static final SelenideElement helpButton = $("a.index-module-nav-link-YtJag[href='//support.avito.ru']");
-    SelenideElement helpWord = $x("//a[@data-marker='logo-desktop-design/link' and @aria-label='Помощь']");
+    private static final SelenideElement avitoLogo = $("a[data-marker='search-form/logo']");
+//
+private static final SelenideElement helpButton = $("a[href*='support.avito.ru']");
+    private static final SelenideElement searchHelpInput = $x("//input[@data-marker='search-form/select/search-input']");
 
+    // Ввод текста в поле поиска
+    private static final SelenideElement searchInput = $x("//input[@data-marker='search-form/select/search-input']");
 
-
-
+    SelenideElement resultsMoney = $x("//div[contains(@class, 'two-columns-layout-redesign-left-mSm5x')]");
 
 
     // Открытие страницы
     public MainPage openPage() {
         open("/");
         return this;
+    }  public MainPage resultsMoney() {
+        resultsMoney.shouldHave(text("деньги за заказ"));
+        return this;
     }
-    public MainPage helpWord() {
-        helpWord.shouldBe(visible)
-                .shouldHave(text("Помощь"));
+    public MainPage searchHelpInput() {
+        searchHelpInput.should(Condition.appear, Duration.ofSeconds(10))
+                .shouldBe(visible)
+                .setValue("деньги за заказ").pressEnter();
         return this;
     }
     public MainPage switchToNewTab() {
@@ -57,7 +66,8 @@ public class MainPage {
     }
 
     public MainPage helpButton() {
-        helpButton.shouldBe(visible)
+        helpButton.should(Condition.appear, Duration.ofSeconds(10))
+                .shouldBe(visible)
                 .shouldHave(text("Помощь"))
                 .click();
         return this;
@@ -87,7 +97,7 @@ public class MainPage {
 
 
     public MainPage bannerCountry() {
-        bannerCountry.should(Condition.appear, Duration.ofSeconds(2)) // Задержка 2 секунды перед проверкой
+        bannerCountry.should(Condition.appear, Duration.ofSeconds(12)) // Задержка 2 секунды перед проверкой
                 .shouldHave(text("Мы не смогли определить ваш город"));
         return this;
     }

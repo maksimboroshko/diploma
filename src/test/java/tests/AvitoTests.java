@@ -12,19 +12,17 @@ public class AvitoTests extends TestBase {
     String urlButton = "https://www.avito.ru/apps?utm_source=avito_banner&utm_medium=referral&utm_campaign=avito_banner";
 
     @Test
+    @Step("Тест: Проверка текста баннера и ссылки")
     public void testBannerTextAndLink() {
         openPageAndCheckBanner();
         checkMoreDetailsLink();
         clickMoreDetailsLinkAndSwitchWindow();
-
-        // Переключаемся на новое окно и проверяем URL
         verifyUrl();
     }
 
     @Step("Открываем страницу и проверяем баннер")
     public void openPageAndCheckBanner() {
-        mainPage
-                .checkBannerText();
+        mainPage.checkBannerText();
         Allure.step("Проверка баннера прошла успешно");
     }
 
@@ -49,36 +47,56 @@ public class AvitoTests extends TestBase {
     }
 
     @Test
-    @Step("Проверка работы поиска товаров")
+    @Step("Тест: Проверка работы поиска товаров")
     public void testSearchFunctionality() {
-        mainPage
-                .reloadAndEnterTextAndClick()
-                .checkSearchResults();
+        performSearch();
     }
-    @Step("поиск страны тбилиси")
+
+    @Step("Выполняем поиск товара")
+    public void performSearch() {
+        mainPage.reloadAndEnterTextAndClick().checkSearchResults();
+    }
+
     @Test
+    @Step("Тест: Поиск страны Тбилиси")
     public void testCheckCountryBanner() {
-        mainPage
-                .bannerCountry()
+        selectCountryTbilisi();
+    }
+
+    @Step("Выбираем страну Тбилиси")
+    public void selectCountryTbilisi() {
+        mainPage.bannerCountry()
                 .changeButton()
                 .regionSearchInput()
                 .tbilisiButton()
                 .okayButton()
                 .showMoreButtonForTbilisi();
     }
-    @Step("проверка наличие логотипа на главной странице сайта")
+
     @Test
-    public void CheckLogo() {
-        mainPage
-                .avitoLogo();
+    @Step("Тест: Проверка наличия логотипа на главной странице")
+    public void checkLogo() {
+        verifyLogo();
     }
-    @Step("проверка раздела помощь")
+
+    @Step("Проверяем логотип Avito")
+    public void verifyLogo() {
+        mainPage.avitoLogo();
+    }
+
     @Test
-    public void CheckHelpPage() {
-        mainPage
-                .helpButton() // gg
+    @Step("Тест: Проверка раздела 'Помощь'")
+    public void checkHelpPage() {
+        openAndVerifyHelpPage();
+    }
+
+    @Step("Открываем раздел 'Помощь' и проверяем")
+    public void openAndVerifyHelpPage() {
+        mainPage.helpButton()
                 .switchToNewTab()
-                .helpWord();
+                .searchHelpInput()
+                .resultsMoney();
     }
 }
+
 
