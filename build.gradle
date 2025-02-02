@@ -47,7 +47,5 @@ tasks.withType(Test) {
 
 task jenkins_test(type: Test) {
     useJUnitPlatform {
-        includeTags ("simple")
-        excludeTags("other")
     }
 }
