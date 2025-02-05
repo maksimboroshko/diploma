@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "diploma",
+    "environment": "prod",
+    "comment": "@boroshko",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "/var/folders/g_/czbw3_8j0_g6hm9_q1cddq980000gn/T/17739679624728909505/allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "7847663914:AAEQB6Dl-c3pu4ZiOrthUR5xUI2fuG7uBI4",
+    "chat": "-4628136185",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
