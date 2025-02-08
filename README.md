@@ -1,4 +1,4 @@
-🎮 Automated tests for AVITO's official website
+# 🎮 Automated tests for AVITO's official website
 
 <p align="center"><img width=30% title="AVITO" src="images/avito.png">
 </p>
