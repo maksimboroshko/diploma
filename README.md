@@ -1,5 +1,5 @@
 # :crystal_ball: Automated tests for AVITO's official website
-<p align="center"><img width=30% title="AVITO" src="images/avito-logo.svg">
+<p align="center"><img width=30% title="AVITO" src="https://upload.wikimedia.org/wikipedia/commons/3/30/Avito_Logo.svg">
 </p>
 ## :page_with_curl:	Contents
 + [Test cases run](#runner-test-cases-run)
