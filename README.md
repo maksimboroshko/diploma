@@ -35,7 +35,7 @@
   - [x] The search header says there are no results for a search with random symbols
 
 
-# :toolbox: Instruments used
+# 💻: Instruments used
 <p  align="center">
   <code><img width="5%" title="IntelliJ IDEA" src="images/IDEA-logo.svg"></code>
   <code><img width="5%" title="Java" src="images/java-logo.svg"></code>
@@ -63,7 +63,7 @@
 
 
 
-# :compass: How to run these tests
+# 🚀: How to run these tests
 
 ### Using command prompt
 #### Locally
