@@ -1,6 +1,5 @@
-<img src="./images/logo.png" width="50" height="50">
+🎮 Automated tests for AVITO's official website
 
-Automated tests for AVITO's official website
 <p align="center"><img width=30% title="AVITO" src="images/avito.png">
 </p>
 ## :page_with_curl:	Contents
