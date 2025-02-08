@@ -14,7 +14,7 @@
 + [Jira integration](#ticket-jira-integration)
 
 
-## :runner: Test cases run
+## 🧑‍💻Test cases run
 ### Automated test cases
 - Main page
   - [x] Industry page opens after clicking on 'View all industries' button
