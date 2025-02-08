@@ -69,12 +69,12 @@
 #### Locally
 Please note that the following method will run the tests with the following parameters: (can be changed manually at src/test/resources/remote.properties)
 + Browser: **Google Chrome**
-+ Browser version: **112.0**
++ Browser version: **126.0**
 + Browser size: **1920x1080**
 
 To run the automated tests:
 ```bash
-gradle clean test -Denv='local'
+gradle  jenkins_test -Denv='local'
 ```
 To get the report:
 ```bash
@@ -84,7 +84,7 @@ allure serve build/allure-results
 #### Remotely
 To run the automated tests:
 ```bash
-gradle clean test -Denv='remote' -Dlogin=user1 -Dpassword=1234 
+gradle Jenkins_test
 ```
 To get the report:
 ```bash
@@ -97,7 +97,7 @@ allure serve build/allure-results
 
 Please note that the following method will run the tests with the following default parameters:
 + Browser: **Google Chrome**
-+ Browser version: **100.0**
++ Browser version: **126.0**
 + Browser size: **1920x1080**
 
 To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-LuxoftWebsiteTests/), specially created for this project.
