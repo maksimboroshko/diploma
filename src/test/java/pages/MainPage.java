@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 
+
 public class MainPage {
 
     private static final SelenideElement bannerBlock = $(".top-banner-module-content-Q1f85");
