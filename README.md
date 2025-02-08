@@ -17,22 +17,22 @@
 ## 🧑‍💻Test cases run
 ### Automated test cases
 - Main page
-  - [x] Industry page opens after clicking on 'View all industries' button
-  - [x] Case studies page opens after clicking on 'View more case studies' button
+  - [x] test text
+  - [x] test text
 - Search page
-  - [x] The search header text correctness
-  - [x] The correct amount of items on the search first page
-- Careers page
-  - [x] When searching for a jobs with a keyword, only openings with this keyword are shown
-  - [x] When searching for a jobs from the country, only this country's openings are shown
-  - [x] When searching for a jobs with a specialization, only this specialization's openings are shown
+  - [x] test text
+  - [x] test text
+- Help page
+  - [x] test text
+  - [x] test text
+  - [x] test text
 ### Manual test cases
 - Main page
-  - [x] The header navigation has clickable links
-  - [x] The header navigation hovering initiates a dropdown menu
+  - [x] test text
+  - [x] test text
 - Search page
-  - [x] No items are shown for a search with random symbols
-  - [x] The search header says there are no results for a search with random symbols
+  - [x] test text
+  - [x] test text
 
 
 # 💻 Instruments used
