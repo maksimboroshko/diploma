@@ -1,7 +1,6 @@
-# :crystal_ball: Automated tests for Luxoft's official website
-<p align="center"><img width=30% title="LUXOFT" src="images/luxoft-new-white.svg">
+# :crystal_ball: Automated tests for AVITO's official website
+<p align="center"><img width=30% title="AVITO" src="images/avito-logo.svg">
 </p>
-
 ## :page_with_curl:	Contents
 + [Test cases run](#runner-test-cases-run)
 + [Instruments used](#toolbox-instruments-used)
@@ -226,7 +225,7 @@ There's a video attachment for each test available.
 
 ###  [Main Jira task for all Luxoft features](https://jira.autotests.cloud/browse/HOMEWORK-766)
 <p align="center">
-  <img src="images/jira-task-main.PNG" alt="Main Jira ticket for LUXOFT" width="750">
+  <img src="images/jira-task-main.PNG" alt="Main Jira ticket for AVITO" width="750">
 </p>
 
 ###  [Sample Jira task ticket](https://jira.autotests.cloud/browse/HOMEWORK-677)
