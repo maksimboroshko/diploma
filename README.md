@@ -1,4 +1,6 @@
-# :crystal_ball: Automated tests for AVITO's official website
+<img src="./images/logo.png" width="50" height="50">
+
+Automated tests for AVITO's official website
 <p align="center"><img width=30% title="AVITO" src="images/avito.png">
 </p>
 ## :page_with_curl:	Contents
@@ -40,7 +42,7 @@
   <code><img width="5%" title="Java" src="images/java-logo.svg"></code>
   <code><img width="5%" title="Selenide" src="images/selenide-logo.svg"></code>
   <code><img width="5%" title="Selenoid" src="images/selenoid-logo.svg"></code>
-  <code><img width="5%" title="Gradle" src="images/gradle-logo.svg "></code>
+  <code><img width="5%" title="Gradle" src="images/gradle-logo.svg"></code>
   <code><img width="5%" title="JUnit5" src="images/junit5-logo.svg"></code>
   <code><img width="5%" title="Allure Report" src="images/allure-Report-logo.svg"></code>
   <code><img width="5%" title="Allure TestOps" src="images/allure-ee-logo.svg"></code>
