@@ -20,26 +20,26 @@ public class AvitoTests extends TestBase {
         verifyUrl();
     }
 
-    @Step("Открываем страницу и проверяем баннер")
+    @Step("Тест: Открываем страницу и проверяем баннер")
     public void openPageAndCheckBanner() {
         mainPage.checkBannerText();
         Allure.step("Проверка баннера прошла успешно");
     }
 
-    @Step("Проверка ссылки 'Подробнее'")
+    @Step("Тест: Проверка ссылки 'Подробнее'")
     public void checkMoreDetailsLink() {
         mainPage.checkMoreDetailsLink();
         Allure.step("Ссылка 'Подробнее' проверена успешно");
     }
 
-    @Step("Кликаем по ссылке и переключаемся на новое окно")
+    @Step("Тест: Кликаем по ссылке и переключаемся на новое окно")
     public void clickMoreDetailsLinkAndSwitchWindow() {
         mainPage.clickMoreDetailsLink();
         Selenide.switchTo().window(1);
         Allure.step("Переключились на новое окно");
     }
 
-    @Step("Проверка правильности URL")
+    @Step("Тест: Проверка правильности URL")
     public void verifyUrl() {
         String expectedUrl = urlButton;
         assert url().equals(expectedUrl) : "Ожидался переход на " + expectedUrl + ", но открылась " + url();
@@ -52,7 +52,7 @@ public class AvitoTests extends TestBase {
         performSearch();
     }
 
-    @Step("Выполняем поиск товара")
+    @Step("Тест: Выполняем поиск товара")
     public void performSearch() {
         mainPage.reloadAndEnterTextAndClick().checkSearchResults();
     }
@@ -63,7 +63,7 @@ public class AvitoTests extends TestBase {
         selectCountryTbilisi();
     }
 
-    @Step("Выбираем страну Тбилиси")
+    @Step("Тест: Выбираем страну Тбилиси")
     public void selectCountryTbilisi() {
         mainPage.bannerCountry()
                 .changeButton()
@@ -79,7 +79,7 @@ public class AvitoTests extends TestBase {
         verifyLogo();
     }
 
-    @Step("Проверяем логотип Avito")
+    @Step("Тест: Проверяем логотип Avito")
     public void verifyLogo() {
         mainPage.avitoLogo();
     }
@@ -90,12 +90,28 @@ public class AvitoTests extends TestBase {
         openAndVerifyHelpPage();
     }
 
-    @Step("Открываем раздел 'Помощь' и проверяем")
+    @Step("Тест: Открываем раздел 'Помощь' и проверяем")
     public void openAndVerifyHelpPage() {
         mainPage.helpButton()
                 .switchToNewTab()
                 .searchHelpInput()
                 .resultsMoney();
+    }
+
+    @Test
+    @Step("Тест: Поиск товара")
+    public void searchPage() {
+        mainPage
+                .reloadAndEnterTextAndClick()
+                .checkSearchResults();
+
+    }
+
+    @Step("Тест: Открытие карточки и проверка , что открылась нужный товар")
+    public void openRequestPage() {
+        mainPage
+                .openFirstItemAndCheckTitle();
+
     }
 }
 

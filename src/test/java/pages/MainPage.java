@@ -1,9 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.*;
 import org.openqa.selenium.Keys;
 import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
@@ -13,39 +10,49 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
-    private static final SelenideElement bannerBlock = $(".top-banner-module-content-Q1f85");
-    private static final SelenideElement bannerText = bannerBlock.$("span");
-    private static final SelenideElement moreDetailsLink = bannerBlock.$("a[data-marker='title']");
-    private static final SelenideElement inputField = $("[data-marker='search-form/suggest/input']");
-    private static final SelenideElement searchButton = $("[data-marker='search-form/submit-button']");
-    private static final SelenideElement pageTitleText = $(".page-title-text-CBgaH.page-title-inline-LU8GK");
-    private static final SelenideElement pageTitleCount = $(".page-title-count-yKVwK");
-    private static final SelenideElement cookieBanner = $("[class*='styles-module-root-_yNxQ'][role='status']");
-    private static final SelenideElement bannerCountry = $$("span.styles-module-size_s-nEvE8")
+    private static SelenideElement bannerBlock = $(".top-banner-module-content-Q1f85");
+    private static  SelenideElement bannerText = bannerBlock.$("span");
+    private static  SelenideElement moreDetailsLink = bannerBlock.$("a[data-marker='title']");
+    private static  SelenideElement inputField = $("[data-marker='search-form/suggest/input']");
+    private static  SelenideElement searchButton = $("[data-marker='search-form/submit-button']");
+    private static  SelenideElement pageTitleText = $(".page-title-text-CBgaH.page-title-inline-LU8GK");
+    private static  SelenideElement pageTitleCount = $(".page-title-count-yKVwK");
+    private static  SelenideElement cookieBanner = $("[class*='styles-module-root-_yNxQ'][role='status']");
+    private static SelenideElement bannerCountry = $$("span.styles-module-size_s-nEvE8")
             .findBy(Condition.text("Мы не смогли определить ваш город"));
 
 
-    private static final SelenideElement changeButton = $("[data-marker='location/tooltip-change']");
-    private static final SelenideElement regionSearchInput = $("[data-marker='popup-location/region/search-input']");
-    private static final SelenideElement tbilisiButton = $("button[data-marker='popup-location/region/custom-option([object Object])'] .suggest-suggest_content-Gr5Vf");
-    private static final SelenideElement showMoreButtonForTbilisi = $("button[data-marker='popup-location/save-button']");
-    private static final SelenideElement okayButton = $("button.styles-module-root-EEwdX");
-    private static final SelenideElement avitoLogo = $("a[data-marker='search-form/logo']");
+    private static  SelenideElement changeButton = $("[data-marker='location/tooltip-change']");
+    private static  SelenideElement regionSearchInput = $("[data-marker='popup-location/region/search-input']");
+    private static  SelenideElement tbilisiButton = $("button[data-marker='popup-location/region/custom-option([object Object])'] .suggest-suggest_content-Gr5Vf");
+    private static  SelenideElement showMoreButtonForTbilisi = $("button[data-marker='popup-location/save-button']");
+    private static SelenideElement okayButton = $("button.styles-module-root-EEwdX");
+    private static  SelenideElement avitoLogo = $("a[data-marker='search-form/logo']");
 //
-private static final SelenideElement helpButton = $("a[href*='support.avito.ru']");
-    private static final SelenideElement searchHelpInput = $x("//input[@data-marker='search-form/select/search-input']");
+private static  SelenideElement helpButton = $("a[href*='support.avito.ru']");
+    private static  SelenideElement searchHelpInput = $x("//input[@data-marker='search-form/select/search-input']");
 
     // Ввод текста в поле поиска
-    private static final SelenideElement searchInput = $x("//input[@data-marker='search-form/select/search-input']");
+    private static  SelenideElement searchInput = $x("//input[@data-marker='search-form/select/search-input']");
 
-    SelenideElement resultsMoney = $x("//div[contains(@class, 'two-columns-layout-redesign-left-mSm5x')]");
+    private static  SelenideElement resultsMoney = $x("//div[contains(@class, 'two-columns-layout-redesign-left-mSm5x')]");
+    private static SelenideElement firstItem = $x("//div[@class='items-items-pZX46' and @data-marker='catalog-serp']/div[1]");
+
 
 
     // Открытие страницы
     public MainPage openPage() {
         open("/");
         return this;
-    }  public MainPage resultsMoney() {
+    }
+
+    public MainPage openFirstItemAndCheckTitle() {
+        firstItem.shouldBe(visible)
+                .click();
+        return this;
+    }
+
+    public MainPage resultsMoney() {
         resultsMoney.shouldHave(text("деньги за заказ"));
         return this;
     }
@@ -160,7 +167,7 @@ private static final SelenideElement helpButton = $("a[href*='support.avito.ru']
         // Нажимаем кнопку "Найти"
         searchButton.click();
 
-        return this;  // Возвращаем объект MainPage, чтобы цепочка методов продолжалась
+        return this;
     }
 
     // Проверка результатов поиска
