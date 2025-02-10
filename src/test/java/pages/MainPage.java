@@ -36,21 +36,29 @@ private static  SelenideElement helpButton = $("a[href*='support.avito.ru']");
     private static  SelenideElement searchInput = $x("//input[@data-marker='search-form/select/search-input']");
 
     private static  SelenideElement resultsMoney = $x("//div[contains(@class, 'two-columns-layout-redesign-left-mSm5x')]");
-    private static SelenideElement firstItem = $x("//div[@class='items-items-pZX46' and @data-marker='catalog-serp']/div[1]");
+    private static SelenideElement firstCard = $x("//div[@class='items-items-pZX46' and @data-marker='catalog-serp']/div[1]");
 
 
 
-    // Открытие страницы
+    public MainPage openFirstItemAndCheckTitle() {
+        firstCard.shouldBe(visible);
+        SelenideElement firstCard = $$("[data-marker='item']").first();
+        String title = firstCard.$("[itemprop='name']").text();
+        String price = firstCard.$("[itemprop='price']").text();
+        firstCard.click();
+        $("[data-marker='item-title']").shouldHave(Condition.text(title));
+        $("[data-marker='item-price']").shouldHave(Condition.text(price));
+        return this;
+    }
+
+
+
     public MainPage openPage() {
         open("/");
         return this;
     }
 
-    public MainPage openFirstItemAndCheckTitle() {
-        firstItem.shouldBe(visible)
-                .click();
-        return this;
-    }
+
 
     public MainPage resultsMoney() {
         resultsMoney.shouldHave(text("деньги за заказ"));
