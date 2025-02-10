@@ -111,7 +111,7 @@ You can see the results via Allure Reports, or use the link to Allure TestOps.
 The following page will open. You can keep the default credentials and press the indicated button directly.
 
 <p  align="center">
-<img src="images/jenkins-parameters.png" alt="How to run the tests with Jenkins" width="500">
+<img src="images/build.png" alt="How to run the tests with Jenkins" width="500">
 </p>
 
 # :bar_chart: <a name="AllureReports">Final report in [Allure Reports](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-LuxoftWebsiteTests/allure/)</a>
@@ -131,20 +131,16 @@ The main page of the Allure report contains the following information blocks:
 #### Local run report
 
 <p align="center">
-  <img src="images/allure distributed - local.png" alt="Local Allure Report" width="650">
+  <img src="images/result.png" alt="Local Allure Report" width="650">
 </p>
 
-#### Remote run report
-> Please note that some tests might be yellow due to the remote server unavailability.
-<p align="center">
-  <img src="images/allure distributed.PNG" alt="Remote Allure Report" width="650">
-</p>
+
 
 ### List of tests with a description of steps and visualization of results
 This page presents the standard distribution of the tests run by user stories and test suites.
 
 <p align="center">
-  <img src="images/Allure Report steps.png" alt="Allure Report" width="500">
+  <img src="images/moredetails.png" alt="Allure Report" width="500">
 </p>
 
 
@@ -210,7 +206,7 @@ There's a video attachment for each test available.
 
 ### Telegram notification example
 <p align="center">
-<img src="images/tlgrm.png" alt="Telegram" width="550">
+<img src="images/tgbot.png" alt="Telegram" width="550">
 </p>
 
 
