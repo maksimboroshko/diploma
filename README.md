@@ -91,7 +91,7 @@ To get the report:
 allure serve build/allure-results
 ```
 
-### Using [Jenkins](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-LuxoftWebsiteTests/)
+### Using [Jenkins](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec)
 
 > Jenkins access request: admin@qa.guru
 
