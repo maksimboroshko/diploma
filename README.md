@@ -100,7 +100,7 @@ Please note that the following method will run the tests with the following defa
 + Browser version: **126.0**
 + Browser size: **1920x1080**
 
-To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-LuxoftWebsiteTests/), specially created for this project.
+To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec), specially created for this project.
 The environment is set up for the Russian language, to run it please use the button with an :arrow_forward:.
 You can see the results via Allure Reports, or use the link to Allure TestOps.
 
