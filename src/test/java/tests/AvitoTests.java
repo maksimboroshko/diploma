@@ -98,18 +98,13 @@ public class AvitoTests extends TestBase {
                 .resultsMoney();
     }
 
+
     @Test
-    @Step("Тест: Поиск товара")
-    public void searchPage() {
-        mainPage
-                .reloadAndEnterTextAndClick()
-                .checkSearchResults();
-
-    }
-
     @Step("Тест: Открытие карточки и проверка , что открылась нужный товар") // не работает этот
     public void openRequestPage() {
         mainPage
+                .reloadAndEnterTextAndClick()
+                .checkSearchResults()
                 .openFirstItemAndCheckTitle();
 
     }

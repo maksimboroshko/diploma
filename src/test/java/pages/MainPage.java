@@ -41,16 +41,24 @@ private static  SelenideElement helpButton = $("a[href*='support.avito.ru']");
 
 
     public MainPage openFirstItemAndCheckTitle() {
-        firstCard.shouldBe(visible);
-        SelenideElement firstCard = $$("[data-marker='item']").first();
+         firstCard = $$("[data-marker='item']").first();
+        firstCard.shouldBe(visible, Duration.ofSeconds(1000));
+
         String title = firstCard.$("[itemprop='name']").text();
         String price = firstCard.$("[itemprop='price']").text();
-        firstCard.click();
-        $("[data-marker='item-title']").shouldHave(Condition.text(title));
-        $("[data-marker='item-price']").shouldHave(Condition.text(price));
+
+        firstCard.shouldBe(visible, Duration.ofSeconds(1000));
+
+        $("[data-marker='item-title']").should(Condition.appear, Duration.ofSeconds(1005));
+
+        actions().moveToElement(firstCard).doubleClick().perform();
+
+
+        $("[data-marker='item-title']").shouldHave(Condition.text(title), Duration.ofSeconds(10));
+        $("[data-marker='item-price']").shouldHave(Condition.text(price), Duration.ofSeconds(10));
+
         return this;
     }
-
 
 
     public MainPage openPage() {
