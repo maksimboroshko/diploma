@@ -107,7 +107,7 @@ public class AvitoTests extends TestBase {
 
     }
 
-    @Step("Тест: Открытие карточки и проверка , что открылась нужный товар")
+    @Step("Тест: Открытие карточки и проверка , что открылась нужный товар") // не работает этот
     public void openRequestPage() {
         mainPage
                 .openFirstItemAndCheckTitle();
