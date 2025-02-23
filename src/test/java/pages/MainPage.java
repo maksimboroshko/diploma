@@ -142,31 +142,6 @@ private static  SelenideElement helpButton = $("a[href*='support.avito.ru']");
         return this;
     }
 
-
-
-    public void checkBannerTextCookies() {
-        // Используем селектор для нахождения баннера, который содержит нужный текст
-        SelenideElement bannerText = $x("//div[contains(@class, 'styles-module-root-_yNxQ')]//span[contains(text(), 'Пользуясь сайтом, вы принимаете')]");
-
-        // Ожидаем, что элемент будет видим на странице
-        bannerText.shouldBe(Condition.visible);
-
-        // Проверяем, что текст баннера содержит ожидаемую строку
-        String actualText = bannerText.getText().trim();
-        String expectedText = "Пользуясь сайтом, вы принимаете политику куки. Так Авито становится удобнее 🍪";
-
-        // Сравниваем фактический текст с ожидаемым
-        assert actualText.equals(expectedText) : "Ожидаемый текст не найден. Найден: " + actualText;
-
-        // Проверяем правильность ссылки на политику куки
-        SelenideElement cookiePolicyLink = $x("//a[contains(@href, '/legal/rules/cookies')]");
-        cookiePolicyLink.shouldHave(Condition.attribute("href", "/legal/rules/cookies"));
-    }
-
-
-
-
-
     // Метод для перезагрузки страницы, ввода текста и клика по кнопке
     public MainPage reloadAndEnterTextAndClick() {
         // Открываем страницу

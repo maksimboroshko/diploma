@@ -1,4 +1,4 @@
-package tests;
+package Configuration;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -47,12 +47,6 @@ public class TestBase {
         clearBrowserCookies();
         clearBrowserLocalStorage();
     }
-
-
-
-
-
-
 
     @AfterEach
     void addAttachments() {
