@@ -18,10 +18,8 @@ public class ResultPage {
         String title = firstCard.$("[itemprop='name']").text();
         String price = firstCard.$("[itemprop='price']").text();
 
-        // Убедимся, что элемент появился на странице
         $("[data-marker='item-title']").should(Condition.appear, Duration.ofSeconds(5));
 
-        // Дважды кликаем на карточку
         actions().moveToElement(firstCard).doubleClick().perform();
 
         // Проверяем, что на открывшейся странице правильно отображаются данные

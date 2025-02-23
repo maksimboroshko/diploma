@@ -41,6 +41,7 @@ private static  SelenideElement helpButton = $("a[href*='support.avito.ru']");
 
 
     public MainPage openFirstItemAndCheckTitle() {
+
          firstCard = $$("[data-marker='item']").first();
         firstCard.shouldBe(visible, Duration.ofSeconds(1000));
 

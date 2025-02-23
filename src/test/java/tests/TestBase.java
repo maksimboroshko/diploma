@@ -1,4 +1,4 @@
-package Configuration;
+package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -11,13 +11,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
 
-
 import java.util.Map;
-
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
 
 public class TestBase {
+
     MainPage mainPage = new MainPage();
 
     @BeforeAll
