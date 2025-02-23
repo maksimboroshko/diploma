@@ -16,3 +16,4 @@ public class LogoTest extends TestBase {
         mainPage.avitoLogo();
     }
 }
+
