@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
 
+
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
