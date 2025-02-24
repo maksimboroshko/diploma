@@ -3,25 +3,18 @@
 <p align="center"><img width=30% title="AVITO" src="images/avito.png">
 </p>
 
-## 🧑‍💻Test cases run
-### Automated test cases
-- Main page
-  - [x] test text
-  - [x] test text
-- Search page
-  - [x] test text
-  - [x] test text
-- Help page
-  - [x] test text
-  - [x] test text
-  - [x] test text
-### Manual test cases
-- Main page
-  - [x] test text
-  - [x] test text
-- Search page
-  - [x] test text
-  - [x] test text
+## 🧑‍💻Тест-кейсы
+- Главная страница:
+  - [x] Проверка логотипа
+  - [x] Проверка баннера и элементов навигации
+- Страница поиска:
+  - [x] Выполнение запроса "машина" и проверка результатов
+  - [x] Открытие карточки товара и валидация названия и цены
+- Страница помощи:
+  - [x] Проверка работы раздела "Помощь"
+  - [x] Валидация поиска по разделу "Помощь"
+  - [x] Проверка отображения раздела помощи в новой вкладке
+
 
 
 # 💻 Instruments used
@@ -41,57 +34,55 @@
 
 </p>
 
-+ **Java** is the primary programming language for this project.
-+ **Selenide** framework was used for writing the automated tests.
-+ **JUnit 5** is used as a unit testing framework.
-+ **Gradle** is used to build the project.
-+ **Jenkins** is used for running the tests.
-+ **Selenoid** is used to launch browsers in **Docker** containers.
-+ **Allure Report** is used to visualize test results.
-+ **Telegram API** is used for receiving the final report via Telegram Bot.
++ **Java** – основной язык программирования проекта.
++ **Selenide** – фреймворк для написания автоматизированных тестов.
++ **JUnit 5** – фреймворк для организации и запуска тестов.
++ **Gradle** – система сборки проекта.
++ **Jenkins** – инструмент для запуска тестов в CI/CD.
++ **Selenoid** – запуск браузеров в Docker-контейнерах.
++ **Allure Report** – визуализация результатов тестирования.
++ **Telegram API** – получение финального отчёта через Telegram-бот.
 
 
 
-# 🚀 How to run these tests
+# 🚀 Как запустить тесты 
 
-### Using command prompt
-#### Locally
-Please note that the following method will run the tests with the following parameters: (can be changed manually at src/test/resources/remote.properties)
-+ Browser: **Google Chrome**
-+ Browser version: **126.0**
-+ Browser size: **1920x1080**
+### Локальный запуск через командную строку
+**Важно:** По умолчанию тесты запускаются с такими параметрами (при необходимости их можно изменить в файле `src/test/resources/remote.properties`):
++ Браузер: **Google Chrome**
++ Версия браузера: **126.0**
++ Размер окна: **1920x1080**
 
-To run the automated tests:
+Для запуска тестов выполните:
 ```bash
 gradle  jenkins_test -Denv='local'
 ```
-To get the report:
+Для просмотра отчёта запустите:
 ```bash
 allure serve build/allure-results
 ```
 
-#### Remotely
-To run the automated tests:
+#### Удалённый запуск
+Для запуска тестов удалённо выполните:
 ```bash
 gradle Jenkins_test
 ```
-To get the report:
+Для просмотра отчёта запустите:
 ```bash
 allure serve build/allure-results
 ```
 
-### Using [Jenkins](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec)
+### Запуск через  [Jenkins](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec)
 
-> Jenkins access request: admin@qa.guru
+> Доступ к Jenkins: admin@qa.guru
 
-Please note that the following method will run the tests with the following default parameters:
+Тесты в Jenkins запускаются со следующими параметрами по умолчанию:
 + Browser: **Google Chrome**
 + Browser version: **126.0**
 + Browser size: **1920x1080**
 
-To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec), specially created for this project.
-The environment is set up for the Russian language, to run it please use the button with an :arrow_forward:.
-You can see the results via Allure Reports, or use the link to Allure TestOps.
+Для запуска тестов через Jenkins используйте [job](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec), Окружение настроено для русского языка, поэтому для запуска нажмите на кнопку со стрелкой :arrow_forward:.
+Результаты можно посмотреть через Allure Report
 
 <p  align="center">
 <img src="images/jenkins.png" alt="How to run the tests with Jenkins" width="500">
@@ -107,20 +98,19 @@ The following page will open. You can keep the default credentials and press the
 
 
 
-### List of tests with a description of steps and visualization of results
-This page presents the standard distribution of the tests run by user stories and test suites.
-
+### Список тестов с описанием шагов и визуализацией результатов
+На данной странице представлен стандартный набор тестов, сгруппированный по юзер-стори и тестовым наборам.
 <p align="center">
   <img src="images/moredetails.png" alt="Allure Report" width="500">
 </p>
 
-### Video attachment example
+### Пример видео-приложения
 There's a video attachment for each test available.
 <p align="center">
   <img title="Selenoid Video" src="images/sample-video-web.gif">
 </p>
 
-### Telegram notification example
+### Пример уведомления в Telegram
 <p align="center">
 <img src="images/tgbot.png" alt="Telegram" width="550">
 </p>
