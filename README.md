@@ -53,25 +53,6 @@
 + Версия браузера: **126.0**
 + Размер окна: **1920x1080**
 
-Для запуска тестов выполните:
-```bash
-gradle  jenkins_test -Denv='local'
-```
-Для просмотра отчёта запустите:
-```bash
-allure serve build/allure-results
-```
-
-#### Удалённый запуск
-Для запуска тестов удалённо выполните:
-```bash
-gradle Jenkins_test
-```
-Для просмотра отчёта запустите:
-```bash
-allure serve build/allure-results
-```
-
 ### Запуск через  [Jenkins](https://jenkins.autotests.cloud/job/qa_guru_31_bm_test/build?delay=0sec)
 
 > Доступ к Jenkins: admin@qa.guru
